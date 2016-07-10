@@ -1,0 +1,26 @@
+<div layout-padding>
+    <h1>Add new Link</h1>
+    <p>To add a new link fill out the form and follow the instructions. Or add the contract to your wallet.  <md-button class="md-primary md-raised" ng-click="add.showAlert($event)"   >
+        Show Details
+    </md-button>
+    </p>
+    <md-input-container>
+        <label>Title</label>
+        <input ng-model="add.title" ng-change="add.createPayload();">
+    </md-input-container>
+    <md-input-container>
+        <label>Link</label>
+        <input ng-model="add.link" ng-change="add.createPayload();">
+    </md-input-container>
+    <md-input-container>
+        <label>Send Donations to</label>
+        <input ng-model="add.beneficiary" ng-change="add.createPayload();">
+    </md-input-container>
+</div>
+<div layout-padding style="text-align: center" ng-show="add.title.length > 0 && add.link.length > 0 && add.beneficiary.length > 0 && add.payload.length > 0 && add.errors == undefined">
+    To add your great link, <br />send <strong>1 ether</strong> to <br />{{add.address}} <br /> with 350k gas and include the following payload:<br />
+    <textarea rows="20" cols="50">{{add.payload}}</textarea>
+</div>
+<div layout-padding style="text-align: center" ng-show="add.errors != undefined">
+    Error: {{add.errors.name}}
+</div>

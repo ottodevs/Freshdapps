@@ -1,0 +1,8 @@
+<div layout-padding>
+    <h1>Fresh DApps and News</h1>
+    <p>If its really important, its on FreshDapps!</p>
+</div>
+<div ng-repeat="dapp in main.dapps" class="dappline" layout-padding>
+    {{$index+1}}. <a href="{{dapp[1]}}">{{dapp[0]}}</a><br />
+    <small>Donate: {{dapp[3]}} | Points: {{dapp[2].toString()}}</small>
+</div>
